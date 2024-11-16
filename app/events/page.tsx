@@ -1,6 +1,6 @@
 import { EventGrid } from "@/components/EventGrid";
 
-export default function Home() {
+export default function Events() {
     return (
       <main className="min-h-screen">
 
@@ -13,7 +13,7 @@ export default function Home() {
         </section>
         
         <section className="py-16 px-4 max-w-7xl mx-auto">
-          <div class="flex flex-col space-y-5 ...">
+          <div className="flex flex-col space-y-5 ...">
             <h2 className="text-3xl font-bold text-gray-900">Featured Events</h2>
             <EventGrid />
             <h2 className="text-3xl font-bold text-gray-900">Clubs</h2>
