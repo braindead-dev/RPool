@@ -73,15 +73,15 @@ export default function DashboardPage() {
   return (
     <main className="min-h-screen p-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Welcome, Demo User</h1>
+        <h1 className="text-3xl font-bold mb-8">Welcome, Henry W.</h1>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {stats.map((stat) => (
             <Card key={stat.title}>
-              <CardHeader className="pb-2">
-                <CardDescription>{stat.title}</CardDescription>
-                <CardTitle className="text-2xl">{stat.value}</CardTitle>
-              </CardHeader>
+                <CardHeader className="flex flex-col justify-center h-24">
+                    <CardDescription>{stat.title}</CardDescription>
+                    <CardTitle className="text-2xl">{stat.value}</CardTitle>
+                </CardHeader>
             </Card>
           ))}
         </div>
@@ -170,6 +170,12 @@ export default function DashboardPage() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <h3 className="font-medium">Derrick L. sent you a message request</h3>
+                    <p className="text-sm text-gray-500">6 hours ago</p>
+                  </div>
+                </div>
                 <div className="flex justify-between items-center">
                   <div>
                     <h3 className="font-medium">Joined UCR Boxing Practice</h3>
