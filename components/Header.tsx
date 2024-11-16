@@ -41,13 +41,17 @@ export function Header() {
 
         <div className="flex items-center space-x-4">
           <Link href="/login">
-            <Button variant="ghost" className="text-gray-600 hover:text-gray-700">
-                Log in
+            <Button
+              variant="ghost"
+              className="text-gray-600 hover:text-gray-700">
+              Log in
             </Button>
           </Link>
-          <Button className="bg-blue-600 text-white hover:bg-blue-700">
-            Get Started
-          </Button>
+          <Link href="/login">
+            <Button className="bg-blue-600 text-white hover:bg-blue-700">
+              Get Started
+            </Button>
+          </Link>
         </div>
       </div>
     </header>
