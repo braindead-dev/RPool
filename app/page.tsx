@@ -1,3 +1,5 @@
+import { SearchBar } from "@/components/SearchBar";
+
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -6,6 +8,9 @@ export default function Home() {
         <h1 className="text-6xl font-bold mb-6">
           <div className="text-white-500">Make Friends, Save Gas</div>
         </h1>
+        <div className="max-w-3xl mx-auto mb-12">
+          <SearchBar />
+        </div>
       </section>
     </main>
   );
