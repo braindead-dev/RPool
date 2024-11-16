@@ -18,7 +18,7 @@ const stats = [
   },
   {
     title: "Active Events",
-    value: "3",
+    value: "2",
   },
 ];
 
@@ -30,6 +30,7 @@ const upcomingEvents = [
     time: "8:00 PM",
     spots: 1,
     meetupLocation: "UCR Lot 30",
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.909626637957!2d-117.33536872416181!3d33.96916227318842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcae48c06e7679%3A0x5481390c97c17014!2sUC%20Riverside%20Lot%2030!5e0!3m2!1sen!2sus!4v1731797706384!5m2!1sen!2sus",
     destination: "The Novo, 800 W Olympic Blvd, Los Angeles, CA",
     participants: [
       {
@@ -49,6 +50,7 @@ const upcomingEvents = [
     time: "6:00 PM",
     spots: 3,
     meetupLocation: "UCR Hub",
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.7082911635453!2d-117.33369751531285!3d33.97433650404957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcae12790a4881%3A0xfac5ba60bc0ded17!2sHighlander%20Union%20Building!5e0!3m2!1sen!2sus!4v1731797752510!5m2!1sen!2sus",
     destination: "ASG Boxing Club, 24210 Postal Ave, Moreno Valley, CA",
     participants: [
       {
@@ -90,7 +92,7 @@ export default function DashboardPage() {
               <CardTitle>Upcoming Events</CardTitle>
             </CardHeader>
             <CardContent>
-              <Accordion type="single" collapsible className="space-y-4" >
+              <Accordion type="single" collapsible className="space-y-4">
                 {upcomingEvents.map((event) => (
                   <AccordionItem key={event.id} value={event.id}>
                     <AccordionTrigger className="hover:no-underline">
@@ -113,6 +115,14 @@ export default function DashboardPage() {
                     </AccordionTrigger>
                     <AccordionContent>
                       <div className="space-y-4 pt-4">
+                        <iframe
+                                src={event.mapEmbed}
+                                className="w-full h-48 rounded-md mt-2"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            > </iframe>
                         <div className="space-y-2">
                           <div className="flex items-center gap-2 text-gray-600">
                             <MapPin className="h-4 w-4" />
@@ -121,7 +131,7 @@ export default function DashboardPage() {
                               <p className="text-sm">{event.meetupLocation}</p>
                             </div>
                           </div>
-                          <div className="flex items-center gap-2 text-gray-600">
+                          <div className="flex items-center gap-2 text-gray-600 mt-4">
                             <MapPin className="h-4 w-4" />
                             <div>
                               <p className="text-sm font-medium">Destination</p>
