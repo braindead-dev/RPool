@@ -6,8 +6,8 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "R'Pool - UCR's Carpooling Platform",
-  description: 'Connect with fellow UCR students for carpooling and shared adventures',
+  title: "R'Pool - Find Friends, Save Gas",
+  description: 'Connect with fellow students for carpooling',
 };
 
 export default function RootLayout({
