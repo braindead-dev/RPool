@@ -25,7 +25,7 @@ export function Header() {
             <NavigationMenuList className="hidden md:flex space-x-6">
               <NavigationMenuItem>
                 <Link href="/events" legacyBehavior passHref>
-                  <NavigationMenuLink className="text-gray-600 hover:text-blue-600">
+                  <NavigationMenuLink className="text-gray-600 hover:text-gray-700">
                     Events
                   </NavigationMenuLink>
                 </Link>
@@ -35,7 +35,7 @@ export function Header() {
         </div>
 
         <div className="flex items-center space-x-4">
-          <Button variant="ghost" className="text-gray-600 hover:text-blue-600">
+          <Button variant="ghost" className="text-gray-600 hover:text-gray-700">
             Log in
           </Button>
           <Button className="bg-blue-600 text-white hover:bg-blue-700">
