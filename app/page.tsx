@@ -1,4 +1,6 @@
+import { EventGrid } from "@/components/EventGrid";
 import { SearchBar } from "@/components/SearchBar";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -12,6 +14,17 @@ export default function Home() {
           <SearchBar />
         </div>
       </section>
+
+      <section className="py-16 px-4 max-w-7xl mx-auto">
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-3xl font-bold text-gray-900">Popular Events</h2>
+          <Button variant="outline" className="text-blue-600 hover:text-blue-700">
+            View all events
+          </Button>
+        </div>
+        <EventGrid />
+      </section>
+
     </main>
   );
 }
