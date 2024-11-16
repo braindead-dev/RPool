@@ -49,7 +49,7 @@ export function Header() {
             <Link href="/dashboard">
               <Avatar className="h-8 w-8">
                 <AvatarImage src="https://cdn.discordapp.com/attachments/1178848363819565077/1307447484460830861/IMG_5656.jpg?ex=673a56db&is=6739055b&hm=311b6b32bb836d5ed9f344d52016b12d95e27657c819df6ef57084263c0972b0&" />
-                <AvatarFallback>DU</AvatarFallback>
+                <AvatarFallback>H</AvatarFallback>
               </Avatar>
             </Link>
           ) : (
