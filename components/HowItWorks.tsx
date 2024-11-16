@@ -35,7 +35,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="w-full py-24 bg-white">
+    <section id="how-it-works" className="w-full py-5 pb-20 bg-white">
       <div className="max-w-7xl mx-auto px-1 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -60,11 +60,11 @@ export function HowItWorks() {
                     className={`md:w-1/2 ${
                       index % 2 === 0 ? "md:pr-12" : "md:pl-12"
                     }`}>
-                    <div className="bg-white p-6 rounded-lg shadow-lg">
+                    <div className="bg-white p-3 rounded-lg shadow-lg">
                       <div className="rounded-full bg-blue-100 w-16 h-16 flex items-center justify-center mb-4">
                         {step.icon}
                       </div>
-                      <h3 className="text-xl font-semibold mb-2">
+                      <h3 className="text-2xl font-semibold mb-2">
                         {step.title}
                       </h3>
                       <p className="text-muted-foreground">
