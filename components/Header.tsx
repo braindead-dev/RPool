@@ -25,8 +25,7 @@ export function Header() {
           <Link href="/" className="flex items-center space-x-2">
             <span
               className={`text-3xl font-bold relative ${antonio.className}`}
-              style={{ top: "-3px" }}
-            >
+              style={{ top: "-3px" }}>
               <span className="text-yellow-500">R&apos;</span>
               <span className="text-blue-600">Pool</span>
             </span>
@@ -55,13 +54,17 @@ export function Header() {
           ) : (
             <>
               <Link href="/login">
-                <Button variant="ghost" className="text-gray-600 hover:text-gray-700">
+                <Button
+                  variant="ghost"
+                  className="text-gray-600 hover:text-gray-700">
                   Log in
                 </Button>
               </Link>
-              <Button className="bg-blue-600 text-white hover:bg-blue-700">
-                Get Started
-              </Button>
+              <Link href="/login">
+                <Button className="bg-blue-600 text-white hover:bg-blue-700">
+                  Get Started
+                </Button>
+              </Link>
             </>
           )}
         </div>
