@@ -6,45 +6,45 @@ const events = [
   {
     id: 1,
     title: "Ken Carson Concert",
-    location: "Hollywood Bowl, Los Angeles",
-    date: "Nov 16, 2024",
+    location: "Los Angeles, CA",
+    date: "Nov 17, 2024",
     spots: 3,
     organizer: {
       name: "Henry W.",
-      image: ""
+      image: "https://cdn.discordapp.com/attachments/1178848363819565077/1307447484460830861/IMG_5656.jpg?ex=673a56db&is=6739055b&hm=311b6b32bb836d5ed9f344d52016b12d95e27657c819df6ef57084263c0972b0&"
     }
   },
   {
     id: 2,
-    title: "Example Event",
-    location: "Location, Location",
-    date: "Nov 16, 2024",
-    spots: 3,
+    title: "UCR Boxing Practice",
+    location: "Moreno Valley, CA",
+    date: "Nov 18, 2024",
+    spots: 6,
     organizer: {
-      name: "Henry W.",
-      image: ""
+      name: "Coach Greg",
+      image: "https://cdn.discordapp.com/attachments/1178848363819565077/1307448107231084684/IMG_5916.jpg?ex=673a576f&is=673905ef&hm=6c42ece2cf5f136967754ce6c9e4ed4ff82dc0ca0ee862b66c00fa86f8c5474d&"
     }
   },
   {
     id: 3,
-    title: "Example Event",
-    location: "Location, Location",
+    title: "Trip to Melrose Ave",
+    location: "Los Angeles, CA",
     date: "Nov 16, 2024",
-    spots: 3,
+    spots: 2,
     organizer: {
-      name: "Henry W.",
-      image: ""
+      name: "Stefanie G.",
+      image: "https://cdn.discordapp.com/attachments/1178848363819565077/1307448629174210682/IMG_5918.jpg?ex=673a57ec&is=6739066c&hm=463c0823faf363d6a09e6066f9391f777ff9c642a5957c317c5d2b94f30de41a&"
     }
   },
   {
     id: 4,
-    title: "Example Event",
-    location: "Location, Location",
-    date: "Nov 16, 2024",
+    title: "Ontario Airport",
+    location: "Ontario, CA",
+    date: "Nov 21, 2024",
     spots: 3,
     organizer: {
-      name: "Henry W.",
-      image: ""
+      name: "Derrick L.",
+      image: "https://cdn.discordapp.com/attachments/1178848363819565077/1307449355795562506/IMG_5919.jpg?ex=673a5899&is=67390719&hm=7727d857c5bb4b6bfc71e65cd2e6d72abdd995a3819388372cd885f1f493d9b1&"
     }
   }
 ];
