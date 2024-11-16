@@ -2,10 +2,15 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu";
-import { Antonio } from 'next/font/google';
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu";
+import { Antonio } from "next/font/google";
 
-const antonio = Antonio({ subsets: ['latin'] });
+const antonio = Antonio({ subsets: ["latin"] });
 
 export function Header() {
   return (
