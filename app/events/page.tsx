@@ -3,11 +3,12 @@ import { EventGrid } from "@/components/EventGrid";
 export default function Events() {
     return (
       <main className="min-h-screen">
-
-        <section className="py-20 px-4 bg-gradient-to-b from-white to-blue-50">
-          <div className="flex justify-between items-center mb-8">
-            <h1 className="text-6xl font-bold mb-6">
-              <div className="indent-80 text-white-500">All Events</div>
+        <section className="py-20" style={{
+        background: "url(https://dining.ucr.edu/sites/default/files/header-ucrdining_2.jpg)"
+      }}>
+          <div className="flex">
+            <h1 className="text-6xl font-bold">
+              <div className="indent-80 text-white">All Events</div>
             </h1>
           </div>
         </section>
