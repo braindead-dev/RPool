@@ -6,7 +6,6 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="min-h-screen">
-
       <section className="py-20 px-4 text-center bg-gradient-to-b from-white to-blue-50">
         <h1 className="text-6xl font-bold mb-6">
           <div className="text-white-500">Make Friends, Save Gas</div>
@@ -20,14 +19,15 @@ export default function Home() {
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-3xl font-bold text-gray-900">Popular Events</h2>
           <Link href="/events">
-            <Button variant="outline" className="text-blue-600 hover:text-blue-700">
+            <Button
+              variant="outline"
+              className="text-blue-600 hover:text-blue-700">
               View all events
             </Button>
           </Link>
         </div>
         <EventGrid />
       </section>
-
     </main>
   );
 }
