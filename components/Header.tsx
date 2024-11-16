@@ -13,12 +13,15 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center space-x-8">
           <Link href="/" className="flex items-center space-x-2">
-            <span className={`text-3xl font-bold ${antonio.className}`}>
+            <span
+              className={`text-3xl font-bold relative ${antonio.className}`}
+              style={{ top: "-3px" }} // adjusted to make it look correctly centered
+            >
               <span className="text-yellow-500">R&apos;</span>
               <span className="text-blue-600">Pool</span>
             </span>
           </Link>
-          
+
           <NavigationMenu>
             <NavigationMenuList className="hidden md:flex space-x-6">
               <NavigationMenuItem>
