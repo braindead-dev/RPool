@@ -89,7 +89,7 @@ export default function DashboardPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <Card className="lg:col-span-2">
             <CardHeader>
-              <CardTitle>Upcoming Events</CardTitle>
+              <CardTitle>Your Upcoming Events</CardTitle>
             </CardHeader>
             <CardContent>
               <Accordion type="single" collapsible className="space-y-4">
