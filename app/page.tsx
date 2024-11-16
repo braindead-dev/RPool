@@ -1,4 +1,5 @@
 import { EventGrid } from "@/components/EventGrid";
+import { HowItWorks } from "@/components/HowItWorks";
 import { SearchBar } from "@/components/SearchBar";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -28,6 +29,7 @@ export default function Home() {
         </div>
         <EventGrid />
       </section>
+      <HowItWorks />
     </main>
   );
 }
