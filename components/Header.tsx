@@ -21,7 +21,6 @@ export function Header() {
               <span className="text-blue-600">Pool</span>
             </span>
           </Link>
-
           <NavigationMenu>
             <NavigationMenuList className="hidden md:flex space-x-6">
               <NavigationMenuItem>
