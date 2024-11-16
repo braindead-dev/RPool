@@ -13,6 +13,39 @@ const events = [
       name: "Henry W.",
       image: ""
     }
+  },
+  {
+    id: 2,
+    title: "Example Event",
+    location: "Location, Location",
+    date: "Nov 16, 2024",
+    spots: 3,
+    organizer: {
+      name: "Henry W.",
+      image: ""
+    }
+  },
+  {
+    id: 3,
+    title: "Example Event",
+    location: "Location, Location",
+    date: "Nov 16, 2024",
+    spots: 3,
+    organizer: {
+      name: "Henry W.",
+      image: ""
+    }
+  },
+  {
+    id: 4,
+    title: "Example Event",
+    location: "Location, Location",
+    date: "Nov 16, 2024",
+    spots: 3,
+    organizer: {
+      name: "Henry W.",
+      image: ""
+    }
   }
 ];
 
