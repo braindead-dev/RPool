@@ -23,9 +23,9 @@ export default function Events() {
           <h2 className="text-3xl font-bold text-gray-900">Featured Events</h2>
           <EventGrid />
           <h2 className="text-3xl font-bold text-gray-900">Clubs</h2>
-          <EventGrid />
+          <EventGrid2 />
           <h2 className="text-3xl font-bold text-gray-900">Local</h2>
-          <EventGrid />
+          <EventGrid3 />
         </div>
       </section>
     </main>
