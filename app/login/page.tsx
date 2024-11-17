@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function LoginPage() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gray-50">
+    <main className="h-[70vh] flex items-center justify-center bg-gray-40">
       <Card className="w-[400px]">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl">Welcome back</CardTitle>
