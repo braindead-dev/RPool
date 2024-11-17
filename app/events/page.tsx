@@ -10,10 +10,18 @@ export default function Events() {
         style={{
           background:
             "url(https://dining.ucr.edu/sites/default/files/header-ucrdining_2.jpg)",
-        }}>
+        }}
+      >
         <div className="flex">
           <h1 className="text-7xl font-bold">
-            <div className="indent-80 text-white">All Events</div>
+            <div
+              className="indent-80 text-white"
+              style={{
+                textShadow: "2px 2px 5px rgba(0, 0, 0, 0.7)",
+              }}
+            >
+              All Events
+            </div>
           </h1>
         </div>
       </section>
