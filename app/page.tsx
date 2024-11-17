@@ -21,7 +21,7 @@ export default function Home() {
         </div>
       </section> */}
 
-      <section className="py-20 px-4 text-center">
+      <section className="py-20 px-4 text-center overflow-auto">
         <VideoBackground />
         <h1 className="text-6xl font-bold mb-6">
           <div className="text-white-500">Make Friends, Save Gas</div>
@@ -33,7 +33,7 @@ export default function Home() {
 
       <section className="py-16 px-4 max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-900">Popular Events</h2>
+          <h2 className="text-3xl font-bold text-white">Popular Events</h2>
           <Link href="/events">
             <Button
               variant="outline"
