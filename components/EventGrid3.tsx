@@ -45,7 +45,7 @@ import {
       image:
         "https://melroseavenue-shop.com/assets/img/carousel/06-planet-salon.jpg",
       organizer: {
-        name: "Stefanie G.",
+        name: "Mary G.",
         image:
           "https://i.redd.it/1fovf4hpr6uc1.jpeg",
       },
@@ -59,7 +59,7 @@ import {
       image:
         "https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_667,q_75,w_1000/v1/clients/anaheimca/Full_330_2a77aa32-1a52-4f33-a345-1306bc09e27f.jpg",
       organizer: {
-        name: "Derrick L.",
+        name: "Darius A.",
         image:
           "https://i.pinimg.com/736x/2b/2b/76/2b2b76c0f5458f64c844a7af87e54996.jpg",
       },
