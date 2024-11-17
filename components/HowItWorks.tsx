@@ -49,7 +49,7 @@ export function HowItWorks() {
         <div className="relative">
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-100 hidden md:block" />
 
-          <div className="space-y-5 relative">
+          <div className="space-y-0 relative">
             {steps.map((step, index) => (
               <div key={index} className="relative">
                 <div
