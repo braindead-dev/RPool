@@ -12,22 +12,24 @@ const VideoBackground = dynamic(() => import("@/components/VideoBackground"), {
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* <section className="py-20 px-4 text-center bg-gradient-to-b from-white to-blue-50">
-        <h1 className="text-6xl font-bold mb-6">
-          <div className="text-white-500">Make Friends, Save Gas</div>
-        </h1>
-        <div className="max-w-3xl mx-auto mb-12">
-          <SearchBar />
-        </div>
-      </section> */}
-
-      <section className="py-20 px-4 text-center">
+      <section className="relative py-20 px-4 text-center">
+        {/* Video Background */}
         <VideoBackground />
-        <h1 className="text-6xl font-bold mb-6">
-          <div className="text-white">Make Friends, Save Gas</div>
-        </h1>
-        <div className="max-w-3xl mx-auto mb-12">
-          <SearchBar />
+
+        {/* Black Overlay */}
+        <div
+          className="absolute inset-0 bg-black"
+          style={{ opacity: 0.1 }}
+        ></div>
+
+        {/* Content */}
+        <div className="relative">
+          <h1 className="text-6xl font-bold mb-6">
+            <div className="text-white">Make Friends, Save Gas</div>
+          </h1>
+          <div className="max-w-3xl mx-auto mb-12">
+            <SearchBar />
+          </div>
         </div>
       </section>
 
@@ -37,7 +39,8 @@ export default function Home() {
           <Link href="/events">
             <Button
               variant="outline"
-              className="text-blue-600 hover:text-blue-700">
+              className="text-blue-600 hover:text-blue-700"
+            >
               View all events
             </Button>
           </Link>
