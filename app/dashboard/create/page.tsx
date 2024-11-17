@@ -4,46 +4,33 @@ import { useState } from "react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, CalendarIcon } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
-import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-} from "@/components/ui/popover";
+import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 
 export default function CreateEventPage() {
   const [selectedDate, setSelectedDate] = useState<Date>();
 
   return (
-    <main className="min-h-screen p-8 bg-gray-50">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Create New Carpool Event</h1>
+    <>
+      <h1 className="text-3xl font-bold mb-8">Create New Carpool Event</h1>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Event Details</CardTitle>
-          </CardHeader>
+      <Card>
+        <CardHeader>
+          <CardTitle>Event Details</CardTitle>
+        </CardHeader>
           <CardContent>
             <form className="space-y-6">
-              {/* Event Title */}
               <div className="space-y-2">
                 <Label htmlFor="title">Event Title</Label>
                 <Input id="title" placeholder="Enter event title" />
               </div>
 
-              {/* Date and Time */}
               <div className="grid grid-cols-2 gap-4">
-                {/* Date Picker */}
                 <div className="space-y-2">
                   <Label htmlFor="date">Date</Label>
                   <Popover>
@@ -74,14 +61,12 @@ export default function CreateEventPage() {
                   </Popover>
                 </div>
 
-                {/* Time Input */}
                 <div className="space-y-2">
                   <Label htmlFor="time">Time</Label>
                   <Input id="time" type="time" />
                 </div>
               </div>
 
-              {/* Meetup Location */}
               <div className="space-y-2">
                 <Label htmlFor="meetup">Meetup Location</Label>
                 <div className="relative">
@@ -90,7 +75,6 @@ export default function CreateEventPage() {
                 </div>
               </div>
 
-              {/* Destination */}
               <div className="space-y-2">
                 <Label htmlFor="destination">Destination</Label>
                 <div className="relative">
@@ -99,7 +83,6 @@ export default function CreateEventPage() {
                 </div>
               </div>
 
-              {/* Available Spots */}
               <div className="space-y-2">
                 <Label htmlFor="spots">Available Spots</Label>
                 <Input
@@ -110,7 +93,6 @@ export default function CreateEventPage() {
                 />
               </div>
 
-              {/* Description */}
               <div className="space-y-2">
                 <Label htmlFor="description">Description</Label>
                 <Textarea
@@ -125,7 +107,6 @@ export default function CreateEventPage() {
             </form>
           </CardContent>
         </Card>
-      </div>
-    </main>
+    </>
   );
 }
