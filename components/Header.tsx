@@ -19,21 +19,25 @@ export function Header() {
   const isLoggedIn = pathname.startsWith("/dashboard");
   const router = useRouter();
 
-  const handleHeaderClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleHeaderClick = async (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+    fallbackUrl: string
+  ) => {
     e.preventDefault();
-    if (pathname !== "/") {
-      // Navigate to the homepage
-      await router.push("/");
+    if (pathname !== fallbackUrl) {
+      // Navigate to the fallback URL
+      await router.push(fallbackUrl);
       // Delay slightly to ensure navigation is complete before scrolling
       setTimeout(() => {
-        const element = document.getElementById("how-it-works");
+        const element = document.getElementById(sectionId);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
         }
       }, 100);
     } else {
-      // Scroll directly if already on the homepage
-      const element = document.getElementById("how-it-works");
+      // Scroll directly if already on the fallback URL
+      const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
@@ -64,7 +68,7 @@ export function Header() {
               <NavigationMenuItem>
                 <a
                   href="#how-it-works"
-                  onClick={handleHeaderClick}
+                  onClick={(e) => handleHeaderClick(e, "how-it-works", "/")}
                   className="text-gray-600 hover:text-gray-700"
                 >
                   How it Works
