@@ -5,7 +5,6 @@ import { EventGrid3 } from "@/components/EventGrid3";
 
 
 export default function Events() {
-<<<<<<< HEAD
   return (
     <main className="min-h-screen">
       <section
