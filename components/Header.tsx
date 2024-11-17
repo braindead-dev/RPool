@@ -10,13 +10,39 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Antonio } from "next/font/google";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const antonio = Antonio({ subsets: ["latin"] });
 
 export function Header() {
   const pathname = usePathname();
   const isLoggedIn = pathname.startsWith("/dashboard");
+  const router = useRouter();
+
+  const handleHeaderClick = async (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+    fallbackUrl: string
+  ) => {
+    e.preventDefault();
+    if (pathname !== fallbackUrl) {
+      // Navigate to the fallback URL
+      await router.push(fallbackUrl);
+      // Delay slightly to ensure navigation is complete before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      // Scroll directly if already on the fallback URL
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   return (
     <header className="border-b bg-white">
@@ -35,9 +61,18 @@ export function Header() {
               <NavigationMenuItem>
                 <Link href="/events" legacyBehavior passHref>
                   <NavigationMenuLink className="text-gray-600 hover:text-gray-700">
-                    Events
+                    Explore
                   </NavigationMenuLink>
                 </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <a
+                  href="#how-it-works"
+                  onClick={(e) => handleHeaderClick(e, "how-it-works", "/")}
+                  className="text-gray-600 hover:text-gray-700"
+                >
+                  How it Works
+                </a>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
@@ -60,7 +95,7 @@ export function Header() {
                   Log in
                 </Button>
               </Link>
-              <Link href="/login">
+              <Link href="/register">
                 <Button className="bg-blue-600 text-white hover:bg-blue-700">
                   Get Started
                 </Button>
