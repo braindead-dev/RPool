@@ -1,4 +1,6 @@
 import { EventGrid } from "@/components/EventGrid";
+import { EventGrid2 } from "@/components/EventGrid2";
+
 
 export default function Events() {
     return (
@@ -18,7 +20,7 @@ export default function Events() {
             <h2 className="text-3xl font-bold text-gray-900">Featured Events</h2>
             <EventGrid />
             <h2 className="text-3xl font-bold text-gray-900">Clubs</h2>
-            <EventGrid />
+            <EventGrid2 />
             <h2 className="text-3xl font-bold text-gray-900">Local</h2>
             <EventGrid />
           </div>
