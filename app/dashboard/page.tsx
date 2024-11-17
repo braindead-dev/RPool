@@ -2,9 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { MapPin, Users, Calendar, Plus, MessageSquare, Settings, HelpCircle } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import Link from "next/link";
+import { SideNavBar } from "@/components/SideNavBar";
 
 const stats = [
   {
@@ -81,155 +79,126 @@ const sideNavItems = [
 
 export default function DashboardPage() {
   return (
-    <main className="min-h-screen p-8 bg-gray-50">
-      <div className="max-w-7xl mx-auto flex gap-8">
-        {/* side menu ui */}
-        <div className="flex flex-col gap-4 mt-16">
-          <TooltipProvider>
-            {sideNavItems.map((item) => (
-              <Tooltip key={item.label}>
-                <TooltipTrigger asChild>
-                  <Link href={item.href}>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="w-12 h-12 rounded-xl border-2 hover:bg-blue-50 hover:border-blue-200 transition-colors"
-                    >
-                      <item.icon className="h-5 w-5 text-blue-600" />
-                    </Button>
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent side="right">
-                  <p>{item.label}</p>
-                </TooltipContent>
-              </Tooltip>
-            ))}
-          </TooltipProvider>
-        </div>
-
-        {/* main dashboard content  */}
-        <div className="flex-1">
-          <h1 className="text-3xl font-bold mb-8">Welcome, Henry W.</h1>
+    <>
+      <h1 className="text-3xl font-bold mb-8">Welcome, Henry W.</h1>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {stats.map((stat) => (
-              <Card key={stat.title}>
-                  <CardHeader className="flex flex-col justify-center h-24">
-                      <CardDescription>{stat.title}</CardDescription>
-                      <CardTitle className="text-2xl">{stat.value}</CardTitle>
-                  </CardHeader>
-              </Card>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <Card className="lg:col-span-2">
-              <CardHeader>
-                <CardTitle>Your Upcoming Events</CardTitle>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        {stats.map((stat) => (
+          <Card key={stat.title}>
+              <CardHeader className="flex flex-col justify-center h-24">
+                  <CardDescription>{stat.title}</CardDescription>
+                  <CardTitle className="text-2xl">{stat.value}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <Accordion type="single" collapsible className="space-y-4">
-                  {upcomingEvents.map((event) => (
-                    <AccordionItem key={event.id} value={event.id}>
-                      <AccordionTrigger className="hover:no-underline">
-                        <div className="flex flex-1 items-center justify-between pr-4">
-                          <div>
-                            <h3 className="font-medium text-left">{event.title}</h3>
-                            <div className="flex items-center gap-4 text-sm text-gray-500">
-                              <div className="flex items-center gap-1">
-                                <Calendar className="h-4 w-4" />
-                                {event.date} at {event.time}
-                              </div>
-                              <div className="flex items-center gap-1">
-                                <Users className="h-4 w-4" />
-                                {event.participants.length} joined
-                              </div>
-                            </div>
-                          </div>
-                          <span className="text-sm text-blue-600">{event.spots} spots left</span>
-                        </div>
-                      </AccordionTrigger>
-                      <AccordionContent>
-                        <div className="space-y-4 pt-4">
-                          <iframe
-                                  src={event.mapEmbed}
-                                  className="w-full h-48 rounded-md mt-2"
-                                  style={{ border: 0 }}
-                                  allowFullScreen
-                                  loading="lazy"
-                                  referrerPolicy="no-referrer-when-downgrade"
-                              > </iframe>
-                          <div className="space-y-2">
-                            <div className="flex items-center gap-2 text-gray-600">
-                              <MapPin className="h-4 w-4" />
-                              <div>
-                                <p className="text-sm font-medium">Meetup Location</p>
-                                <p className="text-sm">{event.meetupLocation}</p>
-                              </div>
-                            </div>
-                            <div className="flex items-center gap-2 text-gray-600 mt-4">
-                              <MapPin className="h-4 w-4" />
-                              <div>
-                                <p className="text-sm font-medium">Destination</p>
-                                <p className="text-sm">{event.destination}</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div>
-                            <div className="flex items-center gap-2 mb-2">
-                              <Users className="h-4 w-4 text-gray-600" />
-                              <p className="text-sm font-medium">Participants</p>
-                            </div>
-                            <div className="flex flex-col gap-2">
-                              {event.participants.map((participant) => (
-                                <div key={participant.name} className="flex items-center gap-2">
-                                  <Avatar className="h-8 w-8">
-                                    <AvatarImage src={participant.image} />
-                                    <AvatarFallback>{participant.name[0]}</AvatarFallback>
-                                  </Avatar>
-                                  <span className="text-sm">{participant.name}</span>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Recent Activity</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <h3 className="font-medium">Derrick L. sent you a message request</h3>
-                      <p className="text-sm text-gray-500">6 hours ago</p>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <h3 className="font-medium">Joined UCR Boxing Practice</h3>
-                      <p className="text-sm text-gray-500">2 days ago</p>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <h3 className="font-medium">Created Ken Carson Concert</h3>
-                      <p className="text-sm text-gray-500">5 days ago</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
+          </Card>
+        ))}
       </div>
-    </main>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <Card className="lg:col-span-2">
+          <CardHeader>
+            <CardTitle>Your Upcoming Events</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="space-y-4">
+              {upcomingEvents.map((event) => (
+                <AccordionItem key={event.id} value={event.id}>
+                  <AccordionTrigger className="hover:no-underline">
+                    <div className="flex flex-1 items-center justify-between pr-4">
+                      <div>
+                        <h3 className="font-medium text-left">{event.title}</h3>
+                        <div className="flex items-center gap-4 text-sm text-gray-500">
+                          <div className="flex items-center gap-1">
+                            <Calendar className="h-4 w-4" />
+                            {event.date} at {event.time}
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Users className="h-4 w-4" />
+                            {event.participants.length} joined
+                          </div>
+                        </div>
+                      </div>
+                      <span className="text-sm text-blue-600">{event.spots} spots left</span>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="space-y-4 pt-4">
+                      <iframe
+                              src={event.mapEmbed}
+                              className="w-full h-48 rounded-md mt-2"
+                              style={{ border: 0 }}
+                              allowFullScreen
+                              loading="lazy"
+                              referrerPolicy="no-referrer-when-downgrade"
+                          > </iframe>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2 text-gray-600">
+                          <MapPin className="h-4 w-4" />
+                          <div>
+                            <p className="text-sm font-medium">Meetup Location</p>
+                            <p className="text-sm">{event.meetupLocation}</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2 text-gray-600 mt-4">
+                          <MapPin className="h-4 w-4" />
+                          <div>
+                            <p className="text-sm font-medium">Destination</p>
+                            <p className="text-sm">{event.destination}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2 mb-2">
+                          <Users className="h-4 w-4 text-gray-600" />
+                          <p className="text-sm font-medium">Participants</p>
+                        </div>
+                        <div className="flex flex-col gap-2">
+                          {event.participants.map((participant) => (
+                            <div key={participant.name} className="flex items-center gap-2">
+                              <Avatar className="h-8 w-8">
+                                <AvatarImage src={participant.image} />
+                                <AvatarFallback>{participant.name[0]}</AvatarFallback>
+                              </Avatar>
+                              <span className="text-sm">{participant.name}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Recent Activity</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div className="flex justify-between items-center">
+                <div>
+                  <h3 className="font-medium">Derrick L. sent you a message request</h3>
+                  <p className="text-sm text-gray-500">6 hours ago</p>
+                </div>
+              </div>
+              <div className="flex justify-between items-center">
+                <div>
+                  <h3 className="font-medium">Joined UCR Boxing Practice</h3>
+                  <p className="text-sm text-gray-500">2 days ago</p>
+                </div>
+              </div>
+              <div className="flex justify-between items-center">
+                <div>
+                  <h3 className="font-medium">Created Ken Carson Concert</h3>
+                  <p className="text-sm text-gray-500">5 days ago</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </>
   );
 }
