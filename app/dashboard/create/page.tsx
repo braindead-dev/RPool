@@ -1,43 +1,87 @@
+"use client";
+
+import { useState } from "react";
+import { format } from "date-fns";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { SideNavBar } from "@/components/SideNavBar";
-import { CalendarIcon, MapPin } from "lucide-react";
+import { MapPin, CalendarIcon } from "lucide-react";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from "@/components/ui/popover";
 
 export default function CreateEventPage() {
+  const [selectedDate, setSelectedDate] = useState<Date>();
+
   return (
     <main className="min-h-screen p-8 bg-gray-50">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold mb-8">Create New Carpool Event</h1>
-        
+
         <Card>
           <CardHeader>
             <CardTitle>Event Details</CardTitle>
           </CardHeader>
           <CardContent>
             <form className="space-y-6">
+              {/* Event Title */}
               <div className="space-y-2">
                 <Label htmlFor="title">Event Title</Label>
                 <Input id="title" placeholder="Enter event title" />
               </div>
-              
+
+              {/* Date and Time */}
               <div className="grid grid-cols-2 gap-4">
+                {/* Date Picker */}
                 <div className="space-y-2">
                   <Label htmlFor="date">Date</Label>
-                  <div className="relative">
-                    <Input id="date" type="date" />
-                    <CalendarIcon className="absolute right-3 top-2.5 h-5 w-5 text-gray-400" />
-                  </div>
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <Button
+                        variant="outline"
+                        className={cn(
+                          "w-full justify-between",
+                          !selectedDate && "text-muted-foreground"
+                        )}
+                      >
+                        {selectedDate ? (
+                          format(selectedDate, "PPP")
+                        ) : (
+                          <span>Pick a date</span>
+                        )}
+                        <CalendarIcon className="w-4 h-4 ml-2 opacity-50" />
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-auto p-0" align="start">
+                      <Calendar
+                        mode="single"
+                        selected={selectedDate}
+                        onSelect={setSelectedDate}
+                        initialFocus
+                      />
+                    </PopoverContent>
+                  </Popover>
                 </div>
-                
+
+                {/* Time Input */}
                 <div className="space-y-2">
                   <Label htmlFor="time">Time</Label>
                   <Input id="time" type="time" />
                 </div>
               </div>
 
+              {/* Meetup Location */}
               <div className="space-y-2">
                 <Label htmlFor="meetup">Meetup Location</Label>
                 <div className="relative">
@@ -46,6 +90,7 @@ export default function CreateEventPage() {
                 </div>
               </div>
 
+              {/* Destination */}
               <div className="space-y-2">
                 <Label htmlFor="destination">Destination</Label>
                 <div className="relative">
@@ -54,20 +99,28 @@ export default function CreateEventPage() {
                 </div>
               </div>
 
+              {/* Available Spots */}
               <div className="space-y-2">
                 <Label htmlFor="spots">Available Spots</Label>
-                <Input id="spots" type="number" min="1" placeholder="Number of spots" />
+                <Input
+                  id="spots"
+                  type="number"
+                  min="1"
+                  placeholder="Number of spots"
+                />
               </div>
 
+              {/* Description */}
               <div className="space-y-2">
                 <Label htmlFor="description">Description</Label>
-                <Textarea 
-                  id="description" 
+                <Textarea
+                  id="description"
                   placeholder="Add any additional details about the event"
                   className="h-32"
                 />
               </div>
 
+              {/* Submit Button */}
               <Button className="w-full">Create Event</Button>
             </form>
           </CardContent>
