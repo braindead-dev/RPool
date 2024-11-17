@@ -10,13 +10,35 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Antonio } from "next/font/google";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const antonio = Antonio({ subsets: ["latin"] });
 
 export function Header() {
   const pathname = usePathname();
   const isLoggedIn = pathname.startsWith("/dashboard");
+  const router = useRouter();
+
+  const handleHeaderClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    if (pathname !== "/") {
+      // Navigate to the homepage
+      await router.push("/");
+      // Delay slightly to ensure navigation is complete before scrolling
+      setTimeout(() => {
+        const element = document.getElementById("how-it-works");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      // Scroll directly if already on the homepage
+      const element = document.getElementById("how-it-works");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   return (
     <header className="border-b bg-white">
@@ -35,9 +57,18 @@ export function Header() {
               <NavigationMenuItem>
                 <Link href="/events" legacyBehavior passHref>
                   <NavigationMenuLink className="text-gray-600 hover:text-gray-700">
-                    Events
+                    Explore
                   </NavigationMenuLink>
                 </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <a
+                  href="#how-it-works"
+                  onClick={handleHeaderClick}
+                  className="text-gray-600 hover:text-gray-700"
+                >
+                  How it Works
+                </a>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
