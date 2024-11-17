@@ -51,7 +51,7 @@ export function HowItWorks() {
 
           <div className="space-y-5 relative">
             {steps.map((step, index) => (
-              <div>
+              <div key={index} className="relative">
                 <div
                   className={`md:flex items-center ${
                     index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
@@ -75,7 +75,11 @@ export function HowItWorks() {
                   <div className="hidden md:block md:w-1/2" />
                 </div>
 
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:block">
+                {/* fix the dots so theres 1 on each step */}
+                <div
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:block"
+                  style={{ zIndex: 1 }}
+                >
                   <div className="w-8 h-8 rounded-full bg-blue-600 border-4 border-white" />
                 </div>
               </div>
