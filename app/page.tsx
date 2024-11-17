@@ -19,7 +19,7 @@ export default function Home() {
         {/* Black Overlay */}
         <div
           className="absolute inset-0 bg-black"
-          style={{ opacity: 0.2 }}
+          style={{ opacity: 0.1 }}
         ></div>
 
         {/* Content */}
