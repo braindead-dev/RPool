@@ -24,7 +24,7 @@ export default function Home() {
       <section className="py-20 px-4 text-center">
         <VideoBackground />
         <h1 className="text-6xl font-bold mb-6">
-          <div className="text-white-500">Make Friends, Save Gas</div>
+          <div className="text-white">Make Friends, Save Gas</div>
         </h1>
         <div className="max-w-3xl mx-auto mb-12">
           <SearchBar />
