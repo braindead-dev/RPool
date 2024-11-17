@@ -60,7 +60,7 @@ export function Header() {
                   Log in
                 </Button>
               </Link>
-              <Link href="/login">
+              <Link href="/register">
                 <Button className="bg-blue-600 text-white hover:bg-blue-700">
                   Get Started
                 </Button>

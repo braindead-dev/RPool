@@ -2,13 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 
-export default function LoginPage() {
+export default function RegisterPage() {
   return (
     <main className="h-[70vh] flex items-center justify-center bg-gray-40">
       <Card className="w-[400px]">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl">Welcome back</CardTitle>
-          <CardDescription>Sign in to your account to continue</CardDescription>
+          <CardTitle className="text-2xl">Sign up</CardTitle>
+          <CardDescription>Create an account with your UCR email to continue</CardDescription>
         </CardHeader>
         <CardContent>
           <Link href="/dashboard">
@@ -35,9 +35,9 @@ export default function LoginPage() {
             </Button>
           </Link>
           <div className="mt-4 text-center text-sm text-gray-500">
-            Don&apos;t have an account?{" "}
-            <Link href="/register" className="text-blue-600 hover:underline">
-              Sign up
+            Already have an account?{" "}
+            <Link href="/login" className="text-blue-600 hover:underline">
+              Log in
             </Link>
           </div>
         </CardContent>
