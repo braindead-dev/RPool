@@ -7,7 +7,7 @@ export default function VideoBackground() {
       loop
       muted
       className="absolute top-0 left-0 w-full h-full object-cover -z-10"
-      src="/public/video/Background.mp4"
+      src="/video/Background.mp4"
     />
   );
 }

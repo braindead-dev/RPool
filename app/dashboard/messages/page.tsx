@@ -90,7 +90,6 @@ export default function MessagesPage() {
 
   return (
     <div className="flex h-[calc(100vh-8rem)] gap-4">
-      {/* Conversations List */}
       <Card className="w-1/3">
         <CardContent className="p-4">
           <h2 className="font-semibold mb-4">Messages</h2>
@@ -131,10 +130,8 @@ export default function MessagesPage() {
         </CardContent>
       </Card>
 
-      {/* Chat Area */}
       <Card className="flex-1">
         <CardContent className="p-0 h-full flex flex-col">
-          {/* Chat Header */}
           <div className="p-4 border-b flex items-center space-x-4">
             <Avatar>
               <AvatarImage src={selectedConversation.user.image} />
@@ -148,7 +145,6 @@ export default function MessagesPage() {
             </div>
           </div>
 
-          {/* Messages */}
           <ScrollArea className="flex-1 p-4">
             <div className="space-y-4">
               {messages.map((message) => (
@@ -179,7 +175,6 @@ export default function MessagesPage() {
             </div>
           </ScrollArea>
 
-          {/* Message Input */}
           <form
             onSubmit={handleSendMessage}
             className="p-4 border-t flex items-center space-x-2"
