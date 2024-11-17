@@ -4,6 +4,7 @@ import { MapPin, Users, Calendar, Plus, MessageSquare, Settings, HelpCircle } fr
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { SideNavBar } from "@/components/SideNavBar";
 import Link from "next/link";
 
 const stats = [
@@ -84,28 +85,7 @@ export default function DashboardPage() {
     <main className="min-h-screen p-8 bg-gray-50">
       <div className="max-w-7xl mx-auto flex gap-8">
         {/* side menu ui */}
-        <div className="flex flex-col gap-4 mt-16">
-          <TooltipProvider>
-            {sideNavItems.map((item) => (
-              <Tooltip key={item.label}>
-                <TooltipTrigger asChild>
-                  <Link href={item.href}>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="w-12 h-12 rounded-xl border-2 hover:bg-blue-50 hover:border-blue-200 transition-colors"
-                    >
-                      <item.icon className="h-5 w-5 text-blue-600" />
-                    </Button>
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent side="right">
-                  <p>{item.label}</p>
-                </TooltipContent>
-              </Tooltip>
-            ))}
-          </TooltipProvider>
-        </div>
+          <SideNavBar />
 
         {/* main dashboard content  */}
         <div className="flex-1">
