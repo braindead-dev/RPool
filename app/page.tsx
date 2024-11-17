@@ -3,19 +3,17 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { SearchBar } from "@/components/SearchBar";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import dynamic from "next/dynamic"; 
 
+const VideoBackground = dynamic(() => import("@/components/VideoBackground"), {
+  ssr: false,
+});
 
 export default function Home() {
  return (
    <main className="min-h-screen">
      <section className="py-20 px-4 text-center bg-gradient-to-b from-white to-blue-50">
-       <video
-         autoPlay
-         loop
-         muted
-         className="absolute top-0 left-0 w-full h-full object-cover -z-10"
-         src="/video/Background.mp4"
-       />
+       <VideoBackground />
        <h1 className="text-6xl font-bold mb-6">
          <div className="text-white-500">Make Friends, Save Gas</div>
        </h1>
