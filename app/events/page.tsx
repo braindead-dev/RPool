@@ -14,8 +14,8 @@ export default function Events() {
             "url(https://dining.ucr.edu/sites/default/files/header-ucrdining_2.jpg)",
         }}>
         <div className="flex">
-          <h1 className="text-6xl font-bold">
-            <div className="indent-80 text-black">All Events</div>
+          <h1 className="text-7xl font-bold">
+            <div className="indent-80 text-white">All Events</div>
           </h1>
         </div>
       </section>
